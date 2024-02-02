@@ -15,6 +15,7 @@ import com.base.Utils.Util;
 public class Base extends Web{
 
     private Util util = new Util();
+    private String valorBitcoin;
 
     @FindBy(xpath = "/html/body/header/div/div[2]/div/a[1]")
       WebElement buttonLogin;
@@ -45,6 +46,7 @@ public class Base extends Web{
       WebElement usuario = navegador.findElement(By.xpath("//*[@id=\"id_cpfcnpj\"]"));
       usuario.sendKeys(user);
       //campoUsuario.sendKeys(user);
+      util.WaitInSeconds(10);
     }
 
     public void preencheCampoSenha(WebDriver navegador, String password) {
@@ -56,8 +58,35 @@ public class Base extends Web{
     public void clicaBotaoEntrar(WebDriver navegador) {
       WebElement btnEntrar = navegador.findElement(By.xpath("//*[@id=\"signup_button\"]"));
       btnEntrar.click();
-      util.WaitInSeconds(5);
+      util.WaitInSeconds(1);
     }
 
+    public void ClicaBotaoProdutos(WebDriver navegador) {
+      WebElement btnProduto = navegador.findElement(By.xpath("/html/body/div[2]/div/div/div[1]/a[2]"));
+      btnProduto.click();
+      util.WaitInSeconds(1);
+    }
+
+    public void ChecaValorAtualBitcoin(WebDriver navegador) {
+      valorBitcoin = "";
+      WebElement BitcoinTxt = navegador.findElement(By.xpath("//*[@id=\"products-showcase\"]/div[3]/div[4]/div/div/table/tbody/tr[1]/td[5]"));
+      valorBitcoin = BitcoinTxt.getText();
+      System.out.println("Valor Bitcoin: " + valorBitcoin);
+    }
+
+    public void ArmazenaValorBitcoinConsiderado(WebDriver navegador) {
+      float Vlr_Inicial = 210000.10f;    
+
+      //Faz o tratamento da String do Valor Bitcoin 
+      valorBitcoin = valorBitcoin.replace("R$ ", "");
+      valorBitcoin = valorBitcoin.replace(".", "");
+      valorBitcoin = valorBitcoin.replace(",", ".");
+      
+      float Vlr_AtualInteiro = Float.parseFloat(valorBitcoin);
+      float percentualBitcoin = 1-((Vlr_Inicial-Vlr_AtualInteiro)/Vlr_Inicial)-1;
+      System.out.println("Percentual Bitcoin:" + percentualBitcoin);
+
+      util.WaitInSeconds(5);
+    }
 
 }

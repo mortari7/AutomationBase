@@ -49,6 +49,21 @@ public class BaseSteps extends Web {
     public void click_button_entrar() {
         base.clicaBotaoEntrar(navegador);
     }    
+
+    @Then("click in Products")
+    public void click_in_products() {
+        base.ClicaBotaoProdutos(navegador);
+    }
+
+    @Then("check the actual value of Bitcoin")
+    public void check_the_actual_value_of_bitcoin() {
+        base.ChecaValorAtualBitcoin(navegador);
+    }
+
+    @Then("analyze and store the actual value of Bitcoin")
+    public void analyze_and_store_the_actual_value_of_bitcoin() {
+        base.ArmazenaValorBitcoinConsiderado(navegador);
+    }    
     
     @After
     public void tearDown(){

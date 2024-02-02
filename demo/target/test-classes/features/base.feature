@@ -9,6 +9,9 @@ Feature: Teste
         Then I fill the field "<user>"
         And fill the field "<password>"
         And click button Entrar
+        And click in Products
+        And check the actual value of Bitcoin
+        Then analyze and store the actual value of Bitcoin
 
     Examples:
         | user          | password    | 
