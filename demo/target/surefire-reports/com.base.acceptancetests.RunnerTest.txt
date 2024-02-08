@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.base.acceptancetests.RunnerTest
 -------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.318 s - in com.base.acceptancetests.RunnerTest
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.965 s - in com.base.acceptancetests.RunnerTest
