@@ -1,0 +1,5 @@
+com\base\steps\BaseSteps.class
+com\base\pageObjects\Base.class
+com\base\Web.class
+com\base\acceptancetests\RunnerTest.class
+com\base\Utils\Util.class
