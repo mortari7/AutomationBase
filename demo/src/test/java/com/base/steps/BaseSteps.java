@@ -1,7 +1,5 @@
 package com.base.steps;
 
-import static org.junit.Assert.assertEquals;
-
 import org.openqa.selenium.WebDriver;
 import org.sikuli.script.FindFailed;
 

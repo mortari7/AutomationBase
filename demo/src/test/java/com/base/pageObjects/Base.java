@@ -26,15 +26,16 @@ public class Base extends Web{
       WebElement campoSenha;
 
     Pattern botao = new Pattern("D:\\Desenvolvimento\\AutomationBase\\demo\\src\\test\\resources\\sikuliImages\\btnPermitir.jpg");
-    Screen screen = new Screen();
+    Screen screen = new Screen(); 
 
     public void clicaBotao(WebDriver navegador) throws FindFailed {
         WebElement botaoLogin = navegador.findElement(By.xpath("/html/body/header/div/div[2]/div/a[1]"));
         botaoLogin.click();                      
+        //buttonLogin.click();
     }
 
     public void permiteNotificacao(WebDriver navegador) throws FindFailed {
-      util.WaitInSeconds(2);
+      util.WaitInSeconds(4);
       try{
         screen.click(botao);
       }catch(Exception erro){}
