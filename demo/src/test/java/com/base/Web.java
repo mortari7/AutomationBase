@@ -12,7 +12,7 @@ public class Web {
         public Web(){
             Web.navegador = navegador;
         }
-
+        
        public static WebDriver CreateChrome(){
 
             ChromeDriver navegador = new ChromeDriver();
